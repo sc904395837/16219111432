@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h2>天气爬取</h2>
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" 
+                   href="#collapseOne">
+                  七日天气预报
+                </a>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                {% for i in weather %}
+                <li style="font-size:large">{{ i.City }} {{i.Date}} {{i.Weather}} {{i.Teap}}</li>
+                <hr />
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        <br>
+    <h2>豆瓣Top250电影</h2>
+            <div class="fakeimg">图像</div>
+               <div class="container"></div>
+               <pre class="pre-scrollable"><!--内容可滚动-->
+                 <ol >
+                   {% for i in allList %}
+                   <li>{{ i.content }}</li>
+                   {% endfor %}
+                 </ol>
+               </pre>
+            </div>
+    <h2>动态信息</h2>
+            <div class="dt"></div>
+            <pre class="pre-scrollable">
+                <ol>
+                    {% for i in dontais %}
+                    <li>{{i.title}} {{i.url}} {{i.img}} {{i.author}} {{i.summary}} {{i.content}} </li>
+                    {% endfor %}
+                </ol>
+            </pre>               
+</body>
+</html>
